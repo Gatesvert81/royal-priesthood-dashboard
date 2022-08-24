@@ -1,3 +1,9 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -13,4 +19,71 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@layer base{
+
+  section {
+    @apply w-full h-fit px-10 py-10 md:px-16 lg:px-24
+  }
+
+}
+
+
+@layer components {
+
+  .main__bg {
+    @apply bg-cover relative bg-center bg-no-repeat
+  }
+
+  .large__text {
+    @apply text-4xl font-bold
+  }
+
+  .medium__text {
+    @apply text-2xl font-semibold
+  }
+
+  .normal__text {
+    @apply text-sm  font-semibold text-faded-black 
+  }
+
+  .small__text {
+    @apply text-xs text-faded-black font-bold
+  }
+  
+  .card__title {
+    @apply text-base text-black font-semibold text-left
+  }
+
+  .primary {
+    @apply w-fit h-fit py-2 px-8 bg-main-blue rounded text-white font-semibold
+  }
+
+  .small__btn{
+    @apply w-10 h-8 bg-main-blue rounded
+  }
+
+  .grid__items {
+    @apply w-full h-fit grid grid-cols-1 gap-5
+  }
+
+  .nav__btn {
+    @apply normal__text 
+  }
+
+  .sideNav__btn{
+    @apply w-full px-8 py-3 text-left text-base font-bold text-faded-black
+  }
+
+  /* before:bottom-1/4 */
+
+  .selected {
+    @apply w-full px-8 py-3 text-left flex text-base font-bold text-main-blue border border-main-blue rounded-md shadow relative before:absolute before:w-1.5 before:h-3/5 before:bg-main-blue before:left-0 before:place-self-center before:rounded-tr before:rounded-br
+  }
+
+  .text__input {
+    @apply w-full h-8 rounded px-2 normal__text bg-faded-blue capitalize
+  }
+
 }
